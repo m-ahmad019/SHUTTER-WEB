@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- Sidebar ---------- */
+aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 375px;
+  height: 100%;
+  padding: 50px 45px 0 0;
+  text-align: right;
+  background: #000;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 70px;
+}
+
+nav a {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.on {
+  color: #f0553a;
+}
+
+.social {
+  position: absolute;
+  top: 590px;
+  right: 45px;
+  display: flex;
+  gap: 30px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ---------- Grid ---------- */
+main {
+  margin-right: 375px;
+  padding-top: 20px;
+  padding-bottom: 36px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.s8 { grid-column: span 8; }
+.s6 { grid-column: span 6; }
+.s4 { grid-column: span 4; }
+.s3 { grid-column: span 3; }
+
+/* ---------- Tiles ---------- */
+.t {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  display: block;
+  background: #111;
+}
+
+.t img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.t:hover img {
+  transform: scale(1.05);
+}
+
+.ov {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.t:hover .ov {
+  opacity: 1;
+}
+
+.ov h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.ov span {
+  font-size: 16px;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
